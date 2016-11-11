@@ -3,11 +3,11 @@ using System.Collections;
 
 public class LoseCollider : MonoBehaviour {
 
-	public LevelManger levelManger;
+	private LevelManager levelManager;
 
 	// Use this for initialization
 	void Start () {
-	
+		levelManager = GameObject.FindObjectOfType<LevelManager>();
 	}
 	
 	// Update is called once per frame
@@ -16,8 +16,7 @@ public class LoseCollider : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D (Collider2D trigger) {
-		print ("trigger");
-		levelManger.LoadLevel("Win Screen");
+		levelManager.LoadLevel("Lose Screen");
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {
